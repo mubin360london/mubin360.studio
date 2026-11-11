@@ -60,9 +60,11 @@ h1 em{font-style:normal;background:linear-gradient(100deg,var(--accent),var(--su
 .hero::before{content:"";position:absolute;z-index:-1;inset:-60px 0 auto;height:420px;background:radial-gradient(40% 60% at 18% 30%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 70%),radial-gradient(35% 55% at 85% 20%,color-mix(in srgb,var(--sun) 24%,transparent),transparent 70%);pointer-events:none}
 .stage{box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 40%,transparent),0 30px 80px -30px color-mix(in srgb,var(--accent) 55%,transparent)}
 .seg{flex-wrap:wrap}
-.ticker{overflow:hidden;border-block:1px solid var(--line);margin-top:clamp(28px,5vw,56px);padding-block:14px}
-.ticker-in{display:flex;gap:44px;width:max-content;animation:tick 36s linear infinite;font-family:var(--display);font-weight:700;font-size:clamp(1.2rem,2.6vw,1.9rem);letter-spacing:-.02em;white-space:nowrap}
-.ticker-in span::after{content:"✦";margin-left:44px;color:var(--sun)}
+.ticker{overflow:hidden;margin-top:clamp(28px,5vw,56px);padding-block:14px;border-block:1px solid var(--line);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.ticker-in{display:flex;width:max-content;animation:tick 40s linear infinite;font-family:var(--display);font-weight:700;font-size:clamp(1.05rem,2.2vw,1.5rem);letter-spacing:-.02em;white-space:nowrap}
+.ticker-in span{display:flex;align-items:center}
+.ticker-in span::after{content:"✦";color:var(--sun);font-size:.8em;margin:0 28px}
+.ticker:hover .ticker-in{animation-play-state:paused}
 @keyframes tick{to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){ .ticker-in{animation:none} }
 .grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
@@ -236,7 +238,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </div>
   <p class="muted" style="margin-top:10px;font-size:.9rem">These demos are computer-made rooms that show how a walk-in tour works. Your tour uses real 360° photos of your space.</p>
 </div>
-<div class="ticker" aria-hidden="true"><div class="ticker-in"><span>Estate agents</span><span>Hotels</span><span>Restaurants</span><span>Wedding halls</span><span>Event venues</span><span>Serviced apartments</span><span>Cafés</span><span>Banqueting suites</span><span>Estate agents</span><span>Hotels</span><span>Restaurants</span><span>Wedding halls</span><span>Event venues</span><span>Serviced apartments</span><span>Cafés</span><span>Banqueting suites</span></div></div>
+<div class="wrap"><div class="ticker" role="marquee" aria-label="Who I work with: Estate agents, Hotels, Restaurants, Wedding halls, Event venues, Serviced apartments, Cafés, Banqueting suites"><div class="ticker-in" aria-hidden="true"><span>Estate agents</span><span>Hotels</span><span>Restaurants</span><span>Wedding halls</span><span>Event venues</span><span>Serviced apartments</span><span>Cafés</span><span>Banqueting suites</span><span>Estate agents</span><span>Hotels</span><span>Restaurants</span><span>Wedding halls</span><span>Event venues</span><span>Serviced apartments</span><span>Cafés</span><span>Banqueting suites</span></div></div></div>
 
 <section class="band" id="services"><div class="wrap">
   <div class="sec-head"><p class="eyebrow">Services</p><h2>Every kind of space, shown at its best.</h2></div>
